@@ -1,0 +1,42 @@
+{% extends "admin/base.html" %}
+{% load i18n admin_static suit_tags %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='{% static "suit/css/font-awesome.min.css" %}' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="/favicon.ico">
+{% endblock %}
+
+
+{% block branding %}
+<div align=center>
+    <h1 id="site-name" style="color: #fff;">ADMINISTRACIÓN DETECTOR v1.0</h1><br>
+</div>
+{% endblock %}
+
+{% block welcome-msg %}
+    <span class="welcome">
+        {% trans 'Welcome,' %}
+        <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+    </span>
+{% endblock %}
+
+
+{% block title %}{{ _('PANEL DE ADMINISTRACIÓN') }} | {{ _('DETECTOR v1.0') }}{% endblock %}
+
+{% block footer_links %}
+    Soporte: <a href="mailto:support@altairs-team.org" target="_blank">support@altairs-team.org</a>
+{% endblock %}
+
+{% block copyright %}
+    Detector v1.0 - Bidding Fraud Detector
+    <span class="hidden-md-down"></span>
+    <br>Developed by Altairs Team.
+    <br>All rights reserved - 2019
+{% endblock %}

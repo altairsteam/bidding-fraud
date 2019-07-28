@@ -1,0 +1,5 @@
+django==2.2.3
+https://github.com/darklow/django-suit/tarball/v2
+django-cleanup
+django-admin-sortable2
+pillow

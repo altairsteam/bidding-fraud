@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  detector:
+    build: .
+    container_name: detector
+    entrypoint: /docker-entrypoint.sh
+    volumes:
+      - ./detector/:/detector/
+    ports:
+      - "8000:8000"
